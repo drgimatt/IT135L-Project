@@ -9,16 +9,27 @@ body {
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #940C0C !important;
+    color: #7FCE46;
     font-weight: bold;
 }
+
 .about-heading {
     margin-bottom: 5px; 
     font-size: 70px;
 }
-.CSA-intro{
+
+.KOB-intro{
     font-style: italic;
+    margin-left: 50px;
+    margin-right: 50px
 }
+
+.KOB-body{
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: lefta;
+}
+
 .meet-heading{
     font-size: 50px;
     color:#940C0C;
@@ -28,7 +39,20 @@ body {
     max-height: 100%; /* Adjust as needed */
 }
 .card-title{
-    color: #940C0C ;
+    color: #7FCE46 ;
     font-weight: bold;
     text-align: center;
+}
+.btn-pink{
+    background-color: #DC35A1;
+    color: white;
+}
+.card {
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+}
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
