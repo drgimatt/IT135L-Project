@@ -1,12 +1,7 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-
-.about-us-background {
-    background-color: #24B4C7;
   }
 
 .justify-text {
@@ -14,33 +9,50 @@ body {
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #940C0C !important;
+    color: #7FCE46;
     font-weight: bold;
 }
+
 .about-heading {
     margin-bottom: 5px; 
     font-size: 70px;
-
-   
 }
+
+.KOB-intro{
+    font-style: italic;
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+.KOB-body{
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: lefta;
+}
+
 .meet-heading{
     font-size: 50px;
     color:#940C0C;
 }
-.custom-background {
-    background-color: #24B4C7;
+.banner-image {
+    max-width: 100%; /* Adjust as needed */
+    max-height: 100%; /* Adjust as needed */
 }
-.custom-background .row {
-    margin-right: 0;
-    margin-left: 0;
+.card-title{
+    color: #24B4C7 ;
+    font-weight: bold;
+    text-align: center;
 }
-.text-white {
-    color: #940C0C;
+.btn-pink{
+    background-color: #DC35A1;
+    color: white;
 }
-.text-black {
-    color: rgb(27, 25, 25);
+.card {
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
 }
-.resizable {
-    resize: both;
-    overflow: auto;
+
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
