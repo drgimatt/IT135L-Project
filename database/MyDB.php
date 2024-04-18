@@ -76,21 +76,60 @@ if (!$db) {
                               )";
 
     // Execute the query
-    $userroleTableResult = $db->exec($userroleTableQuery);
+    $Result = $db->exec($userrolecategoryTableQuery);
     
-    if (!$userroleTableResult) {
+    if (!$Result) {
         echo $db->lastErrorMsg();
     } else {
-        echo "userrole table created successfully\n";
+        echo "userrole category table created successfully\n";
     }
 
-    // Execute the query
-    $credentialsTableResult = $db->exec($credentialsTableQuery);
+    $Result = $db->exec($articlecategoryTableQuery);
     
-    if (!$credentialsTableResult) {
+    if (!$Result) {
         echo $db->lastErrorMsg();
     } else {
-        echo "credentials table created successfully\n";
+        echo "article category table created successfully\n";
+    }
+
+    $Result = $db->exec($itemcategoryTableQuery);
+    
+    if (!$Result) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "item category table created successfully\n";
+    }
+
+    $Result = $db->exec($employeeTableQuery);
+    
+    if (!$Result) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "employee table created successfully\n";
+    }
+
+    $Result = $db->exec($inventoryTableQuery);
+    
+    if (!$Result) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "inventory table created successfully\n";
+    }
+
+    $Result = $db->exec($articlesTableQuery);
+    
+    if (!$Result) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "articles table created successfully\n";
+    }
+
+    $Result = $db->exec($credentialsTableQuery);
+    
+    if (!$Result) {
+        echo $db->lastErrorMsg();
+    } else {
+        echo "credentials category table created successfully\n";
     }
 }
 
