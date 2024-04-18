@@ -9,7 +9,7 @@ body {
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #7FCE46;
+    color: #24B4C7;
     font-weight: bold;
 }
 
@@ -43,8 +43,8 @@ body {
     font-weight: bold;
     text-align: center;
 }
-.btn-pink{
-    background-color: #DC35A1;
+.btn-green{
+    background-color: #7FCE46;
     color: white;
 }
 .card {

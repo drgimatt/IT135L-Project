@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+.btn-blue{
+    background-color: #24B4C7;
+    color: white;
+}
 
 body {
     background-image: url('../assets/contact_bg.jpg'); 
