@@ -76,12 +76,12 @@ if (!$db) {
                               )";
 
     // Execute the query
-    $Result = $db->exec($userrolecategoryTableQuery);
+    $Result = $db->exec($userroleTableQuery);
     
     if (!$Result) {
         echo $db->lastErrorMsg();
     } else {
-        echo "userrole category table created successfully\n";
+        echo "userrole table created successfully\n";
     }
 
     $Result = $db->exec($articlecategoryTableQuery);
