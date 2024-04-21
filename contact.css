@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url('../assets/contact_bg.jpg'); 
+    background-image: url('assets/contact_bg.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
