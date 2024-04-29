@@ -59,11 +59,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    // Include database connection
+                <?php
+                    // include database connection
                     include '../database/connectDB.php';
 
-                    // Fetch all donations
+                    // fetch all donors
                     $stmt = $pdo_obj->query("SELECT * FROM Donors");
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         echo "<tr>";
@@ -71,10 +71,10 @@
                         echo "<td>{$row['DonorName']}</td>";
                         echo "<td>{$row['DonorNum']}</td>";
                         echo "<td>{$row['DonorEmail']}</td>";
-                        echo "<td><button class='btn btn-ol-teal btn-sm'>Update</button> <button class='btn btn-ol-pink btn-sm'>Delete</button></td>";
+                        echo "<td> <a href='updateDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
                         echo "</tr>";
                     }
-                    ?>
+                ?>
                 </tbody>
             </table>
         </div>

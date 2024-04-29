@@ -29,6 +29,16 @@
     color: white;
 }
 
+.btn-green{
+    background-color: #7FCE46;
+    color: white;
+}
+
+.btn-pink{
+    background-color: #DC35A1;
+    color: white;
+}
+
 .btn-ol-teal{
     color: #24B4C7;
     border-color: #24B4C7;
