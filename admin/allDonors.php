@@ -45,7 +45,7 @@
     <br>
     <br>
 
-    <div class="container mt-5" style="width:1500px;">
+    <div class="container mt-5"  style="max-width: 1400px;">
         <h2 class="mb-4 green">All Donors</h2>
         <div class="table-responsive">
             <table class="table table-bordered">
