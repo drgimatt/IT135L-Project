@@ -19,15 +19,22 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand">
-            <img src="../assets/logo-main.png" height="50px" alt="Your Logo">
-        </a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-       
-    </nav>
+    <a class="navbar-brand" href="#">
+        <img src="../assets/logo-main.png" height="50px" alt="Your Logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="navbar-collapse collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="btn btn-green ml-2" href="../user/index.html">Return</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -40,14 +47,14 @@
                         <div class="col-md-6">
                             <div class="card-body">
                                 <h3 class="mb-4">Login</h3>
-                                <form id="loginForm">
+                                <form method = "post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="loginForm">
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                                     </div>
                                     <button type="submit" class="btn btn-teal btn-block">Login</button>
                                 </form>
@@ -71,28 +78,43 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // Hardcoded credentials for verification
-            var username = "admin";
-            var password = "123";
-            
-            // Get entered username and password
-            var enteredUsername = document.getElementById("username").value;
-            var enteredPassword = document.getElementById("password").value;
-            
-            // Check if entered credentials match hardcoded credentials
-            if (enteredUsername === username && enteredPassword === password) {
-                // Redirect to the next page after successful login
-                window.location.href = "./allDonations.php";
-            } else {
-                // Display an error message or handle invalid credentials
-                alert("Invalid username or password. Please try again.");
-            }
-        });
-    </script>
 
     </body>
 </html>
+
+<?php 
+
+    include '../database/connectDB.php';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        try{
+
+            $enteredUsername = $_POST['username'];
+            $enteredPassword = $_POST['password'];
+            $credentialsQuery = "SELECT * FROM credentials WHERE username = :username AND password = :password";
+    
+            $stmtCredentials = $pdo_obj->prepare($credentialsQuery);
+            $stmtCredentials->bindParam(':username', $enteredUsername);
+            $stmtCredentials->bindParam(':password', $enteredPassword);
+            $stmtCredentials->execute();
+    
+            $result = $stmtCredentials->fetch(PDO::FETCH_ASSOC);
+            if ($result) {
+                // Credentials match, do something
+                header("Location: ./allDonations.php");
+                exit;
+            } else {
+                // Credentials not found, do something else
+                $message = "Invalid username or password. Please try again.";
+                echo "<script>alert('$message');</script>";
+                exit;
+            }
+    
+        } catch (PDOException $e){
+            echo "Failed to query database: " . $e->getMessage();
+        }
+
+
+    }
+
+?>
