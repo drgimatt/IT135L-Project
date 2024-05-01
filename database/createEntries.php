@@ -50,6 +50,52 @@ try {
     }
     echo "Entries added to Donations table.";
 
+    $employeesEntries = [
+        ["Miguel", "Santos", "Escandor","Worker","msescandor@mymail.mapua.edu.ph","Male","09279140221"],
+        ["Vashti Leonie", "Dela Paz", "Bauson","Worker","vpdelapaz@mymail.mapua.edu.ph","Female",""],
+        ["Althea Louise", "Cobangbang", "Cruz","Worker","alcruz@mymail.mapua.edu.ph","Female",""],
+        ["Katrice Asher", "", "Albano","Worker","kagalbano@mymail.mapua.edu.ph","Female",""],
+        ["Andre", "", "Aquino","Worker","aaaquino@mymail.mapua.edu.ph","Male",""]
+    ];
+
+    $insertEmployees = "INSERT INTO Employees (FirstName, MiddleName, LastName, Position, Email, Gender, ContactNumber) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmtEmployees = $pdo_obj->prepare($insertEmployees);
+    foreach ($employeesEntries as $employee) {
+        $stmtEmployees->execute($employee);
+    }
+    echo "Entries added to Employees table.";
+
+    $credentialsEntries = [
+        [1, "msescandor", "test","2024-05-02"],
+        [2, "vpdelapaz", "test","2024-05-02"],
+        [3, "alcruz", "test","2024-05-02"],
+        [4, "kagalbano", "test","2024-05-02"],
+        [5, "aaaquino", "test","2024-05-02"],
+    ];
+
+    $insertCredentials = "INSERT INTO Credentials (EmployeeID, Username, Password, DateCreated) VALUES (?, ?, ?, ?)";
+    $stmtCredentials = $pdo_obj->prepare($insertCredentials);
+    foreach ($credentialsEntries as $credential) {
+        $stmtCredentials->execute($credential);
+    }
+    echo "Entries added to Credentials table.";
+
+    $categoryEntries = [
+        ["Humanitarian Aid"],
+        ["Health and Wellness"],
+        ["Education and Literacy"],
+        ["Child Welfare"],
+        ["Volunteerism and Philanthropy"],
+    ];
+
+    $insertCategories = "INSERT INTO article_category (Category) VALUES (?)";
+    $stmtCategories = $pdo_obj->prepare($insertCategories);
+    foreach ($categoryEntries as $category) {
+        $stmtCategories->execute($category);
+    }
+    echo "Entries added to Article Category table.";
+
+
 } catch (PDOException $e) {
     echo "Failed to add entries: " . $e->getMessage();
 }

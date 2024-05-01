@@ -19,9 +19,9 @@
         )";
     try {
         $pdo_obj->exec($create_donors_table);
-        echo "Donrs table created successfully.";
+        echo "Donors table created successfully.";
     } catch(PDOException $e) {
-        echo "Error creating table: " . $e->getMessage();
+        echo "\nError Donors creating table: " . $e->getMessage();
     }
 
     // create DONATIONS table
@@ -40,68 +40,72 @@
         $pdo_obj->exec($create_donations_table);
         echo "Donations table created successfully.";
     } catch(PDOException $e) {
-        echo "Error creating table: " . $e->getMessage();
+        echo "\nError Donations creating table: " . $e->getMessage();
     }
 
-    $userroleTableQuery = "CREATE TABLE userrole (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        rolename VARCHAR NOT NULL
+    $articlecategoryTableQuery = "CREATE TABLE IF NOT EXISTS Article_Category (
+        ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+        Category VARCHAR(255) NOT NULL
     )";
 
-    $articlecategoryTableQuery = "CREATE TABLE article_category (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category VARCHAR NOT NULL
+    try {
+        $pdo_obj->exec($articlecategoryTableQuery);
+        echo "Article Category table created successfully.";
+    } catch(PDOException $e) {
+        echo "\nError creating Article Category table: " . $e->getMessage();
+    }
+
+    $employeeTableQuery = "CREATE TABLE IF NOT EXISTS Employees (
+        ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+        FirstName VARCHAR(255) NOT NULL,
+        MiddleName VARCHAR(255),
+        LastName VARCHAR(255) NOT NULL,
+        Position VARCHAR(255) NOT NULL,
+        Email VARCHAR(255) NOT NULL,
+        Gender VARCHAR(255) NOT NULL,
+        ContactNumber VARCHAR(255)
     )";
 
-    $itemcategoryTableQuery = "CREATE TABLE item_category (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        category VARCHAR NOT NULL
-    )";
+    try {
+        $pdo_obj->exec($employeeTableQuery);
+        echo "Employee table created successfully.";
+    } catch(PDOException $e) {
+        echo "\nError creating Employee table: " . $e->getMessage();
+    }
 
-    $employeeTableQuery = "CREATE TABLE employee (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        firstname VARCHAR NOT NULL,
-        middlename VARCHAR,
-        lastname VARCHAR NOT NULL,
-        position VARCHAR NOT NULL,
-        email VARCHAR NOT NULL,
-        gender VARCHAR NOT NULL,
-        contact VARCHAR
-    )";
-
-    $inventoryTableQuery = "CREATE TABLE inventory (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        image LONGBLOB,
-        name VARCHAR NOT NULL,
-        category_id INTEGER,
-        value INTEGER NOT NULL,
-        quantity INTEGER NOT NULL,
-        dateadded VARCHAR NOT NULL,
-        datemodified VARCHAR NOT NULL,
-        FOREIGN KEY(category_id) REFERENCES item_category(id)
-    )";
-
-    $articlesTableQuery = "CREATE TABLE articles (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        employee_id INTEGER,
-        title VARCHAR NOT NULL,
-        category_id INTEGER,
-        author VARCHAR NOT NULL,
-        description VARCHAR NOT NULL,
-        FOREIGN KEY(category_id) REFERENCES article_category(id)
-        FOREIGN KEY(employee_id) REFERENCES employee(id)
+    $articlesTableQuery = "CREATE TABLE IF NOT EXISTS Articles (
+        ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+        EmployeeID INTEGER NOT NULL,
+        Title VARCHAR(255) NOT NULL,
+        CategoryID INTEGER NOT NULL,
+        Description VARCHAR(255) NOT NULL,
+        Picture LONGBLOB,
+        DateCreated DATE NOT NULL,
+        FOREIGN KEY(CategoryID) REFERENCES Article_Category(ID),
+        FOREIGN KEY(EmployeeID) REFERENCES Employees(ID)
     )";                        
 
-    $credentialsTableQuery = "CREATE TABLE credentials (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        employee_id INTEGER,
-        username VARCHAR,
-        password VARCHAR,
-        datecreated VARCHAR,
-        role_id INTEGER,
-        FOREIGN KEY(role_id) REFERENCES userrole(id),
-        FOREIGN KEY(employee_id) REFERENCES employee(id)
+    try {
+        $pdo_obj->exec($articlesTableQuery);
+        echo "Articles table created successfully.";
+    } catch(PDOException $e) {
+        echo "\nError creating Articles table: " . $e->getMessage();
+    }
+
+    $credentialsTableQuery = "CREATE TABLE IF NOT EXISTS Credentials (
+        ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+        EmployeeID INTEGER NOT NULL,
+        Username VARCHAR(255) NOT NULL,
+        Password VARCHAR(255) NOT NULL,
+        DateCreated DATE NOT NULL,
+        FOREIGN KEY(EmployeeID) REFERENCES Employees(id)
     )";
 
+    try {
+        $pdo_obj->exec($credentialsTableQuery);
+        echo "Credentials table created successfully.";
+    } catch(PDOException $e) {
+        echo "\nError creating Credentials table: " . $e->getMessage();
+    }
 
 ?>
