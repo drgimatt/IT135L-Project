@@ -24,9 +24,15 @@
         $stmtDonor->bindParam(2, $donorNum);
         $stmtDonor->bindParam(3, $donorEmail);
     
-        $stmtDonor->execute();
-
-        
+        if ($stmtDonor->execute()) {
+            $statusMessage = "Successfully added.";
+            echo "<script>alert('$message');</script>";
+            header("Location: ./allDonors.php");
+            exit;
+        } else {
+            $statusMessage = "Failed to add donor.";
+            echo "<script>alert('$message');</script>";
+        }
 
     } catch (PDOException $e) {
         echo "Failed to add entries: " . $e->getMessage();

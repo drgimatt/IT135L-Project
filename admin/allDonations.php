@@ -38,7 +38,10 @@
     <br>
 
     <div class="container mt-5"  style="max-width: 1400px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-4 pink">All Donations</h2>
+        <a class="btn btn-teal" href="./addDonations.php">Add Donations</a>
+    </div>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
