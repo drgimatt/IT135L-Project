@@ -34,6 +34,21 @@
             $itemDonor = $donation['ItemDonorID'];
             $itemRem = $donation['ItemRemarks'];
         }
+
+        $getRecord = "SELECT * FROM Donors WHERE DonorID = :donor_id";
+        $stmt = $pdo_obj->prepare($getRecord);
+        $stmt->bindParam(':donor_id', $itemDonor);
+        $stmt->execute();
+        $donor = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // extract values from the fetched donor record
+        if ($donor) {
+            $donorID = $donor['DonorID'];
+            $donorName = $donor['DonorName'];
+            $donorNum = $donor['DonorNum'];
+            $donorEmail = $donor['DonorEmail'];
+        }
+
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -144,8 +159,8 @@
                             <input type="date" class="form-control" id="itemDate" name="itemDate" value="<?php echo $itemDate; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="itemDonor">Item Donor ID</label>
-                            <input type="text" class="form-control" id="itemDonor" name="itemDonor" value="<?php echo $itemDonor; ?>" readonly>
+                            <label for="itemDonor">Donor</label>
+                            <input type="text" class="form-control" id="itemDonor" name="itemDonor" value="<?php echo "$itemDonor - $donorName"; ?>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="itemRem">Item Remarks</label>
