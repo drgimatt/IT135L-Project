@@ -45,40 +45,44 @@
     <br>
     <br>
 
-    <div class="container mt-5"  style="max-width: 1400px;">
-        <h2 class="mb-4 green">All Donors</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Donor ID</th>
-                        <th>Donor Name</th>
-                        <th>Contact Number</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                    // include database connection
-                    include '../database/connectDB.php';
-
-                    // fetch all donors
-                    $stmt = $pdo_obj->query("SELECT * FROM Donors");
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        echo "<tr>";
-                        echo "<td>{$row['DonorID']}</td>";
-                        echo "<td>{$row['DonorName']}</td>";
-                        echo "<td>{$row['DonorNum']}</td>";
-                        echo "<td>{$row['DonorEmail']}</td>";
-                        echo "<td> <a href='updateDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
-                        echo "</tr>";
-                    }
-                ?>
-                </tbody>
-            </table>
-        </div>
+    <div class="container mt-5" style="max-width: 1400px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="green mb-0">All Donors</h2>
+        <a class="btn btn-teal" href="./addDonors.php">Add Donor</a>
     </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Donor ID</th>
+                    <th>Donor Name</th>
+                    <th>Contact Number</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // include database connection
+                include '../database/connectDB.php';
+
+                // fetch all donors
+                $stmt = $pdo_obj->query("SELECT * FROM Donors");
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<tr>";
+                    echo "<td>{$row['DonorID']}</td>";
+                    echo "<td>{$row['DonorName']}</td>";
+                    echo "<td>{$row['DonorNum']}</td>";
+                    echo "<td>{$row['DonorEmail']}</td>";
+                    echo "<td> <a href='updateDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <br>
 <br>
 <br>
