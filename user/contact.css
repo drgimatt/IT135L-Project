@@ -28,6 +28,41 @@ body {
     max-width: 30%;
     height: auto;
 }
+
+
+.btn-teal{
+    background-color: #24B4C7;
+    color: white;
+}
+
+.btn-green{
+    background-color: #7FCE46;
+    color: white;
+}
+
+.btn-pink{
+    background-color: #DC35A1;
+    color: white;
+}
+
+.btn-ol-teal{
+    color: #24B4C7;
+    border-color: #24B4C7;
+}
+
+.btn-ol-pink{
+    color: #DC35A1;
+    border-color: #DC35A1;
+}
+
+.pink {
+    color: #DC35A1
+}
+
+.green {
+    color: #7FCE46
+}
+
 .custom-button {
     background-color: #FF1F99; 
     color: white; /* Text color */

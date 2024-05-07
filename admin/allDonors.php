@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donors</title>
-    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="../assets/favicon.ico">
     <!-- Add Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./admin.css">
@@ -20,7 +20,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand">
-            <img src="../assets/logo-main.png" height="50px" alt="Your Logo">
+            <img src="../assets/logomain.png" height="40px" alt="Your Logo">
         </a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
     <div class="container mt-5" style="max-width: 1400px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="green mb-0">All Donors</h2>
-        <a class="btn btn-teal" href="./addDonors.php">Add Donor</a>
+        <a class="btn btn-green" href="./addDonors.php">Add Donor</a>
     </div>
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -90,7 +90,7 @@
 <br>
 <br>
     <!-- Footer -->
-    <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #FF1F99 !important; color: white;">
+    <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #7FCE46 !important; color: white;">
         <!-- Copyright -->
         <div class="text-center p-3">
             &copy; Kids of Bataan

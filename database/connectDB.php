@@ -9,10 +9,10 @@
     6. go to localhost/IT135L-Project/database/createEntries.php (preloaded entries lang ito)
 */
 
-    $db = "mysql:host=127.0.0.1:3310;dbname=KOBInventory";
+    $db = "mysql:host=localhost;dbname=KOBInventory";
 
     $user = "root";
-    $password = "titingkayad";
+    $password = "";
 
     try {
         $pdo_obj = new PDO($db, $user, $password);

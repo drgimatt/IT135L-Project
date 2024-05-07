@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -55,4 +55,36 @@ body {
 .card-img-top {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+}
+.btn-teal{
+    background-color: #24B4C7;
+    color: white;
+}
+
+.btn-green{
+    background-color: #7FCE46;
+    color: white;
+}
+
+.btn-pink{
+    background-color: #DC35A1;
+    color: white;
+}
+
+.btn-ol-teal{
+    color: #24B4C7;
+    border-color: #24B4C7;
+}
+
+.btn-ol-pink{
+    color: #DC35A1;
+    border-color: #DC35A1;
+}
+
+.pink {
+    color: #DC35A1
+}
+
+.green {
+    color: #7FCE46
 }

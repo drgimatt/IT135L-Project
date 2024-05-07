@@ -56,7 +56,7 @@
     }
 
     $employeeTableQuery = "CREATE TABLE IF NOT EXISTS Employees (
-        ID INTEGER AUTO_INCREMENT PRIMARY KEY,
+        ID INTEGER PRIMARY KEY,
         FirstName VARCHAR(255) NOT NULL,
         MiddleName VARCHAR(255),
         LastName VARCHAR(255) NOT NULL,
@@ -78,9 +78,10 @@
         EmployeeID INTEGER NOT NULL,
         Title VARCHAR(255) NOT NULL,
         CategoryID INTEGER NOT NULL,
-        Description VARCHAR(255) NOT NULL,
+        Content VARCHAR(255) NOT NULL,
         Picture LONGBLOB,
         DateCreated DATE NOT NULL,
+        AStatus VARCHAR(255) NOT NULL,
         FOREIGN KEY(CategoryID) REFERENCES Article_Category(ID),
         FOREIGN KEY(EmployeeID) REFERENCES Employees(ID)
     )";                        

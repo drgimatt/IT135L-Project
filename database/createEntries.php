@@ -51,14 +51,14 @@ try {
     echo "Entries added to Donations table.";
 
     $employeesEntries = [
-        ["Miguel", "Santos", "Escandor","Worker","msescandor@mymail.mapua.edu.ph","Male","09279140221"],
-        ["Vashti Leonie", "Dela Paz", "Bauson","Worker","vpdelapaz@mymail.mapua.edu.ph","Female",""],
-        ["Althea Louise", "Cobangbang", "Cruz","Worker","alcruz@mymail.mapua.edu.ph","Female",""],
-        ["Katrice Asher", "", "Albano","Worker","kagalbano@mymail.mapua.edu.ph","Female",""],
-        ["Andre", "", "Aquino","Worker","aaaquino@mymail.mapua.edu.ph","Male",""]
+        [1452, "Miguel", "Santos", "Escandor","Worker","msescandor@mymail.mapua.edu.ph","Male","09279140221"],
+        [2851, "Vashti Leonie", "Dela Paz", "Bauson","Worker","vpdelapaz@mymail.mapua.edu.ph","Female","123"],
+        [3528, "Althea Louise", "Cobangbang", "Cruz","Worker","alcruz@mymail.mapua.edu.ph","Female","123"],
+        [4894, "Katrice Asher", "G", "Albano","Worker","kagalbano@mymail.mapua.edu.ph","Female","123"],
+        [5721, "Andre", "A", "Aquino","Worker","aaaquino@mymail.mapua.edu.ph","Male","123"]
     ];
 
-    $insertEmployees = "INSERT INTO Employees (FirstName, MiddleName, LastName, Position, Email, Gender, ContactNumber) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $insertEmployees = "INSERT INTO Employees (ID, FirstName, MiddleName, LastName, Position, Email, Gender, ContactNumber) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmtEmployees = $pdo_obj->prepare($insertEmployees);
     foreach ($employeesEntries as $employee) {
         $stmtEmployees->execute($employee);
@@ -66,11 +66,11 @@ try {
     echo "Entries added to Employees table.";
 
     $credentialsEntries = [
-        [1, "msescandor", "test","2024-05-02"],
-        [2, "vpdelapaz", "test","2024-05-02"],
-        [3, "alcruz", "test","2024-05-02"],
-        [4, "kagalbano", "test","2024-05-02"],
-        [5, "aaaquino", "test","2024-05-02"],
+        [1452, "msescandor", "test","2024-05-02"],
+        [2851, "vpdelapaz", "test","2024-05-02"],
+        [3528, "alcruz", "test","2024-05-02"],
+        [4894, "kagalbano", "test","2024-05-02"],
+        [5721, "aaaquino", "test","2024-05-02"],
     ];
 
     $insertCredentials = "INSERT INTO Credentials (EmployeeID, Username, Password, DateCreated) VALUES (?, ?, ?, ?)";
