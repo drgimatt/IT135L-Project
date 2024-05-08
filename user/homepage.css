@@ -26,12 +26,6 @@ body {
     margin-right: 50px
 }
 
-.KOB-body{
-    margin-left: 150px;
-    margin-right: 150px;
-    text-align: lefta;
-}
-
 .meet-heading{
     font-size: 50px;
     color:#940C0C;
@@ -83,10 +77,40 @@ body {
     border-color: #DC35A1;
 }
 
-.pink {
+.pink .bg-dark{
     color: #DC35A1
 }
 
+.bg-dark{
+    color: #DC35A1
+} 
 .green {
     color: #7FCE46
 }
+
+/*
+ * Extra utilities
+ */
+
+ .border-top { border-top: 1px solid #e5e5e5; }
+ .border-bottom { border-bottom: 1px solid #e5e5e5; }
+ 
+ .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+ 
+ .flex-equal > * {
+   -ms-flex: 1;
+   -webkit-box-flex: 1;
+   flex: 1;
+ }
+ @media (min-width: 768px) {
+   .flex-md-equal > * {
+     -ms-flex: 1;
+     -webkit-box-flex: 1;
+     flex: 1;
+   }
+ }
+ 
+ .overflow-hidden { overflow: hidden; }
+
+
+ 
