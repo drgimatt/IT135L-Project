@@ -52,8 +52,9 @@
         }
 
         //insert donor data into table
-        $updateArticle = "UPDATE Articles SET Title = :title, CategoryID = :categoryID, Content = :content, Picture = :picture, DateCreated = :dateCreated, AStatus = :aStatus WHERE EmployeeID = :employeeID";
+        $updateArticle = "UPDATE Articles SET EmployeeID = :employeeID, Title = :title, CategoryID = :categoryID, Content = :content, Picture = :picture, DateCreated = :dateCreated, AStatus = :aStatus WHERE ID = :ID";
         $stmt = $pdo_obj->prepare($updateArticle);
+        $stmt->bindParam(':ID', $_GET['id']);
         $stmt->bindParam(':employeeID', $employeeID);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':categoryID', $categoryID);

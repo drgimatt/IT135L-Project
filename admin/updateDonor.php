@@ -115,7 +115,7 @@
                             <input type="text" class="form-control" id="donorName" name="donorName" value="<?php echo $donorName; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="donorNum">Donor Number</label>
+                            <label for="donorNum">Donor's Contact Number</label>
                             <input type="text" class="form-control" id="donorNum" name="donorNum" value="<?php echo $donorNum; ?>">
                         </div>
                         <div class="form-group">

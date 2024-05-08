@@ -36,7 +36,7 @@
     </div>
 </nav>
 
-    <div class="container">
+    <div class="container" style="padding-top: 50px;">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -83,10 +83,11 @@
 </html>
 
 <?php 
-
+    
+    session_start();
     include '../database/connectDB.php';
 
-    session_start();
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try{
 
