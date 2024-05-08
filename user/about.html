@@ -186,7 +186,7 @@
           <p class="lead text-muted">Kids of Bataan</p>
           <p>
            <!-- Button to toggle the visibility of the gallery -->
-            <button class="btn btn-pink" data-toggle="collapse" data-target="#hiddenContainer">SHOW</button>
+            <button id="toggleButton" class="btn btn-pink" data-toggle="collapse" data-target="#hiddenContainer">SHOW</button>
           </p>
         </div>
         <hr class="featurette-divider">
@@ -195,7 +195,7 @@
        
   
       <!-- Gallery -->
-<div id="hiddenContainer" class=" collapse">
+<div id="hiddenContainer" class=" collapse ml-4 mr-4">
   <div class="row">
     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
       <img
@@ -389,6 +389,17 @@
     </div>
   </div>
 </div>
+
+<!--JS to move when container is toggled-->
+  <script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+      var targetElement = document.getElementById('hiddenContainer');
+      if (targetElement.classList.contains('show')) {
+        // If the container is being shown, scroll to it
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  </script>
 
         <!-- FEATURETTES 
 
