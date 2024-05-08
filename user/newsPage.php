@@ -1,7 +1,16 @@
 <?php
+    // category color code legend
+    $categoryColors = array(
+        "Announcement" => "#FCB020",
+        "Advisory/Updates" => "#24B4C7",
+        "Holiday" => "#7FCE46",
+        "Events" => "#FF1F99",
+        "Appreciation Post" => "#DC35A1"
+    );
+
     include '../database/connectDB.php';
 
-    $getArticles = "SELECT * FROM Articles WHERE AStatus = 'Published' ORDER BY DateCreated DESC"; // most recent - oldest
+    $getArticles = "SELECT * FROM Articles WHERE AStatus = 'Published' ORDER BY DateCreated DESC";
     $articles = $pdo_obj->query($getArticles);
 ?>
 
@@ -68,21 +77,30 @@
             {
                 while($row = $articles->fetch(PDO::FETCH_ASSOC))
                 {
+                    $categoryID = $row['CategoryID'];
+                    $getCategoryName = "SELECT Category FROM Article_Category WHERE ID = :category_id";
+                    $stmt = $pdo_obj->prepare($getCategoryName);
+                    $stmt->bindParam(':category_id', $categoryID);
+                    $stmt->execute();
+                    $category = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $categoryName = $category['Category'];
+
+                    $backgroundColor = isset($categoryColors[$categoryName]) ? $categoryColors[$categoryName] : "gray";
+
                     echo '<div class="item-card" style="padding:0">';
                     echo '<img class="item-card-pic" style="height:200px;min-width:300;" src="data:image/*;base64,' . $row['Picture'] . '">';
                     echo '<div class="item-card-body">';
                     echo '<h4 class="item-card-title">' .$row['Title'] . '</h4>';
                     echo '<img style="width:20px;margin:0;margin-right:5px" src="../assets/dateicon.png"';
                     echo '<p class="item-card-text">' .$row['DateCreated'] . '</p>';
-                    echo '<div style="text-align: right;">'; // Aligning the button container to the right
+                    echo '<span class="item-card-text category-tab" style="background-color:' . $backgroundColor . '; font-size:small">' .$categoryName . '</span>';
+                    echo '<div style="text-align: right;">'; 
                     echo '<a href="readNews.php?id='.$row['ID'].'" class="btn btn-teal">Read More</a>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
                 }
             }
-
-            // if articles status published is empty
             else 
             {
                 echo 'There are currently no published news.';

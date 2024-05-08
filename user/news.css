@@ -167,3 +167,9 @@ body {
 .green {
     color: #7FCE46
 }
+
+.category-tab {
+    color: white !important;
+    border-radius: 20px !important; 
+    padding: 5px 10px !important;
+}

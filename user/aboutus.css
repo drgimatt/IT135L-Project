@@ -18,6 +18,17 @@ body {
     font-size: 70px;
 }
 
+.resizable img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+@media (max-width: 767px) {
+    .resizable {
+        width: 100%;
+    }
+}
+
 .KOB-intro{
     font-style: italic;
     margin-left: 50px;

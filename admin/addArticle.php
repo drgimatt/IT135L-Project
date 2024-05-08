@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     $statusMessage = "";
 
@@ -24,30 +23,43 @@
         $date = $_POST["date"];
         $status = $_POST["status"];
 
-        //insert donor data into table
+        // Prepare the SQL statement with placeholders
         $insertArticle = "INSERT INTO Articles (EmployeeID, Title, CategoryID, Content, Picture, DateCreated, AStatus) 
-        VALUES ('$employeeID', '$title', '$categoryID', '$content', '$image_encoded', '$date', '$status')";
-        
+                        VALUES (:employeeID, :title, :categoryID, :content, :picture, :date, :status)";
+
+        // Prepare the statement
+        $stmt = $pdo_obj->prepare($insertArticle);
+
+        // Bind parameters
+        $stmt->bindParam(':employeeID', $employeeID);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':categoryID', $categoryID);
+        $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':picture', $image_encoded);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':status', $status);
+
         try {
-            $pdo_obj->exec($insertArticle);
-            
+            // Execute the statement
+            $stmt->execute();
+
             echo "
                 <script>
                 alert('Article Created');
                 document.location.href = 'articleDashboard.php';
                 </script>
             ";
-        } 
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo "
                 <script>
                 alert('Failed to create article. Error: ".$e->getMessage()."');
                 document.location.href = 'addArticle.php';
                 </script>
             ";
-        }        
+        }
     }
 ?>
+
 
 
 
@@ -106,7 +118,7 @@
     <br>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="teal text-center mb-4" style="font-weight:bold">Add Article</h2>
+            <h2 class="teal text-center mb-1" style="font-weight:bold">Add Article</h2>
             <div class="card shadow" style="width: 100%">
                 <div class="card-body">
                     <form action="#" method="POST" enctype="multipart/form-data">
@@ -150,7 +162,7 @@
                             <!--placeholder-->
                             <br>
                             <div class="center">
-                                <img id="myimage"  class="form-control image-container" style="display:block; margin-left:auto; margin-right:auto; height: 200px; width: 300px">
+                                <img id="myimage"  class="form-control image-container" style="display:block; margin-left:auto; margin-right:auto; height: 200px; width: 500px">
                             </div>
                         </div>
                         <div class="form-group">
@@ -185,7 +197,7 @@
     // show alert on successful update
     <?php if (!empty($statusMessage)): ?>
         alert("<?php echo $statusMessage; ?>");
-        window.location.href = "./allDonations.php"; 
+        window.location.href = "./allDonations.php";
     <?php endif; ?>
 </script>
 

@@ -41,12 +41,12 @@
     <br>
 
     <div class="container mt-5"  style="max-width: 1400px;">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-4 pink">All Donations</h2>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2 class="mb-1 pink" style="font-weight:bold">All Donations</h2>
         <a class="btn btn-pink" href="./addDonations.php">Add Donations</a>
     </div>
         <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered mt-1">
                 <thead>
                     <tr>
                         <th>Item ID</th>
@@ -77,7 +77,7 @@
                         echo "<td>{$row['ItemDateRec']}</td>";
                         echo "<td>{$row['ItemDonorID']}</td>";
                         echo "<td>{$row['ItemRemarks']}</td>";
-                        echo "<td> <a href='updateDonation.php?id={$row['ItemID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonation.php?id={$row['ItemID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                        echo "<td> <a href='updateDonation.php?id={$row['ItemID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonation.php?id={$row['ItemID']}'><button class='btn btn-ol-pink btn-sm mt-1'>Delete</button></a></td>";
                         echo "</tr>";
                     }
                     ?>

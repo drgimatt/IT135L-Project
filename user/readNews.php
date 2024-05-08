@@ -1,5 +1,5 @@
 <?php
-
+    // Include necessary files and initialize variables
     include '../database/connectDB.php';
 
     $employeeID = "";
@@ -9,27 +9,62 @@
     $picture = "";
     $date = "";
     $status = "";
+    $authorFName = "";
+    $authorLName = "";
+    $categoryName = "";
 
+    // Define the category colors array
+    $categoryColors = array(
+        "Announcement" => "#FCB020",
+        "Advisory/Updates" => "#24B4C7",
+        "Holiday" => "#7FCE46",
+        "Events" => "#FF1F99",
+        "Appreciation Post" => "#DC35A1",
+        // Add more categories and their respective colors as needed
+    );
+
+    // Fetch article details if article ID is provided in URL
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
+        // Fetch article details from the database
         $getArticle = "SELECT * FROM Articles WHERE ID = :art_id";
         $stmt = $pdo_obj->prepare($getArticle);
         $stmt->bindParam(':art_id', $id);
         $stmt->execute();
         $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($article)
-        {
+        if($article) {
+            // Assign fetched values to variables
             $employeeID = $article['EmployeeID'];
             $title = $article['Title'];
             $categoryID = $article['CategoryID'];
             $content = $article['Content'];
             $date = $article['DateCreated'];
             $status = $article['AStatus'];
+
+            // Get author's (employee) first and last name
+            $getAuthorName = "SELECT FirstName, LastName FROM Employees WHERE ID = :author_id";
+            $stmt = $pdo_obj->prepare($getAuthorName);
+            $stmt->bindParam(':author_id', $employeeID);
+            $stmt->execute();
+            $author = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($author) {
+                $authorFName = $author['FirstName'];
+                $authorLName = $author['LastName'];
+            }
+
+            // Get category name
+            $getCategoryName = "SELECT Category FROM Article_Category WHERE ID = :category_id";
+            $stmt = $pdo_obj->prepare($getCategoryName);
+            $stmt->bindParam(':category_id', $categoryID);
+            $stmt->execute();
+            $category = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($category) {
+                $categoryName = $category['Category'];
+            }
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,15 +83,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
-    <!-- Import Poppins font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- pls DO NOT delete. not working properly when placed only in the css file -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
 
 </head>
 <body>
@@ -88,51 +115,60 @@
     </nav>
         <br><br>
 
-    <!--article start-->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="jumbotron-fluid">
-                    <div class="container">
-                        <?php
-                            echo '<img class="img-fluid rounded-start" src="data:image/' . pathinfo($article['Picture'], PATHINFO_EXTENSION) . ';base64,' . $article['Picture'] . '" id="art_image">';
-                        ?>
-                        <h1 class="display-4 mt-3" style="font-weight:bold"><?php echo $title; ?></h1>
-                        <p class="lead">Published on <?php echo $date; ?> by <span><?php echo $authorName; ?></span>, Category: <span><?php echo $categoryName; ?></span></p>
+        <!--article start-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron-fluid">
+                        <div class="container">
+                            <?php
+                                echo '<img class="img-fluid rounded-start" src="data:image/' . pathinfo($article['Picture'], PATHINFO_EXTENSION) . ';base64,' . $article['Picture'] . '" id="art_image">';
+                            ?>
+                            <h1 class="display-4 mt-3" style="font-weight:bold"><?php echo $title; ?></h1>
                         
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="lead" style="font-size:110%">Published on <?php echo $date; ?> by <span><?php echo $authorFName . ' ' . $authorLName; ?></span></p>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <?php
+                                        echo '<p style="font-size:smaller">Category:<span class="category-tab ml-2" style="font-size:smaller; background-color:' . ($categoryColors[$categoryName] ?? 'gray') . ';">' . $categoryName . '</span></p>';
+                                    ?>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            <br>
+                            <p><?php echo $content; ?></p>
+                        </div>
+        <!--article end-->
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="newsPage.php" class="btn btn-pink">Back to All News</a>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Content -->
-                <p><?php echo $content; ?></p>
+
+                </div>
             </div>
         </div>
     </div>
-    <!--article end-->
-
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-md-12">
-                <a href="newsPage.php" class="btn btn-pink">Back to All News</a>
-            </div>
-        </div>
-    </div>
-
-    <br><br><br><br>
-
+<br><br><br><br>
     <!-- Footer -->
     <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #7FCE46 !important; color: white;">
         <!-- Copyright -->
         <div class="text-center p-3">
             &copy; Kids of Bataan
         </div>
-        <!-- Copyright -->
     </footer>
 
+    <!-- Bootstrap JS and other scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+</body>
 </html>

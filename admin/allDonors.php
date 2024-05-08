@@ -49,12 +49,12 @@
     <br>
 
     <div class="container mt-5" style="max-width: 1400px;">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="green mb-0">All Donors</h2>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2 class="green mb-1" style="font-weight:bold">All Donors</h2>
         <a class="btn btn-green" href="./addDonors.php">Add Donor</a>
     </div>
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered mt-1">
             <thead>
                 <tr>
                     <th>Donor ID</th>

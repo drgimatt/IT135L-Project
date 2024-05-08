@@ -81,11 +81,11 @@ try {
     echo "Entries added to Credentials table.";
 
     $categoryEntries = [
-        ["Humanitarian Aid"],
-        ["Health and Wellness"],
-        ["Education and Literacy"],
-        ["Child Welfare"],
-        ["Volunteerism and Philanthropy"],
+        ["Announcement"],
+        ["Advisory/Updates"],
+        ["Holiday"],
+        ["Events"],
+        ["Appreciation Post"]
     ];
 
     $insertCategories = "INSERT INTO article_category (Category) VALUES (?)";

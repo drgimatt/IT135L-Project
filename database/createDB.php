@@ -78,7 +78,7 @@
         EmployeeID INTEGER NOT NULL,
         Title VARCHAR(255) NOT NULL,
         CategoryID INTEGER NOT NULL,
-        Content VARCHAR(255) NOT NULL,
+        Content VARCHAR(2000) NOT NULL,
         Picture LONGBLOB,
         DateCreated DATE NOT NULL,
         AStatus VARCHAR(255) NOT NULL,

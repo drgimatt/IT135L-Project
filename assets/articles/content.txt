@@ -59,78 +59,7 @@ Article 5
 <br>#KidsOfBataan
 
 Article 6
-    Title: YOUNG AMORSOLO: For National Arts Month! 🎨
-    Image: art6.png
-    Date: 02/25/24
-    Content:
-    In celebration of National Arts Month, YOUNG AMORSOLO came to life, offering children a vibrant playground to delve into creativity and self-expression. With engaging lectures and immersive sessions exploring drawing, painting, and a kaleidoscope of colors, the workshop aimed not only to impart skills but to kindle an enduring passion for art while nurturing young talents.🎨
-<br><br>Guided by art mentors who poured their hearts into nurturing talent, each brushstroke propelled them deeper into the enchanting world of art. Fueled by the spirit of Fernando Amorsolo, these young artists emerged with newfound determination, ready to craft their life stories on canvas, aspiring not only to match but to surpass the realm of artistic greatness.
-<br><br>Armed with brushes and fueled by inspiration, these Young Amorsolos are primed to leave an indelible mark on the canvas of history.👨🏻‍🎨
-<br><br>#YoungAmorsolo 
-<br>#KidsofBataan
-<br><br>See full documentation <a href="https://web.facebook.com/kidsofbataan/posts/pfbid0c2YxJbdP18vyF7hQg5cJW3dFRCeeq74b9jbdC1ZFFc2EH93MtTwq1AMAXPbQVqK5l">HERE</a>.
-!! -- this file is just a guide for uniformity pag nagtetest tayo :> -- !!
-
-Article 1
-    Title:  🎄 PasKids 2022: Pasko para sa mga Kids
-    Image: art1.png
-    Date: 12/26/22
-    Content:
-    After months of preparations, Kids of Bataan has successfully made children's smiles bigger upon mounting the most awesome Christmas party this year!
-<br><br>PasKids: Pasko para sa mga Kids came to life as volunteers put their best efforts into gathering funds, preparing fun games and activities, and assisting our children in experiencing the true essence of Christmas. 
-<br><br>Merry Christmas, friends! Our organization is grateful for this awesome opportunity to make children happier this Christmas Season.🎄
-<br><br>See full documentation <a href="https://web.facebook.com/kidsofbataan/posts/pfbid0wohFHRN4baSkPUz98KMvSmSY7gWWYgXaVpzVWKToo6WdHTBjaihjDSAK9AB3xWDPl">HERE</a>. 
-
-Article 2
-    Title: TAYMPERS
-    Image: art2.png
-    Date: 11/21/23
-    Content:
-    Something's cooking up!🍝
-<br><br>TAYMPERS is an upbeat time machine, whisking us back to carefree play and lively streets. Away from screens, it revives traditional Filipino games, echoing laughter and fostering friendships.
-<br><br>More than just games, TAYMPERS is a gateway to our cultural heritage, a playful tribute to our Filipino roots, and a space where kids craft memories that sparkle with pure joy.💫
-<br><br>#TAYMPERS 
-<br>#KidsOfBataan
-
-Article 3
-    Title: TAYMPERS was an epic hit!⚡️
-    Image: art3.png
-    Date: 12/1/23
-    Content:
-    Our little ones had an incredible time embracing the nostalgia of traditional street games in celebration of UNICEF’s World Children’s Month.🌏
-<br><br>Through Kids of Bataan, we created a safe haven for children to freely express themselves, fostering personal growth along the way.🌈
-<br><br>Amidst the digital age's allure, we believe in the magic of reconnecting with timeless fun. Through TAYMPERS, we brought back the sheer joy of classic street games, fostering bonds and friendships among our kids.🤝🏻
-<br><br>Kids of Bataan has done it again! True to our core, we just made smiles bigger one kid at a time!😄
-<br><br>#TAYMPERS
-<br>#KidsOfBataan
-<br><br>See full documentation <a href="https://web.facebook.com/kidsofbataan/posts/pfbid0u5zhx1AbsL2rPAVYwW4KNniTbkEYsC2BEqVdmCkhkK27nbFMYwjviya9iiRqCTihl">HERE</a>.
-
-Article 4
-    Title: 🎄 PasKids 2023: Pasko para sa mga Kids
-    Image: art4.png
-    Date: 12/24/23
-    Content:
-    In our second year, Kids of Bataan cranked up the joy, making this Christmas a blast for ONE HUNDRED children!🎁
-<br><br>PasKids: Pasko para sa mga Kids leveled up into an even more awesome celebration, all thanks to our incredible volunteers who went above and beyond to gather funds, plan exciting games, and ensure our kids immersed themselves in the true magic of Christmas.🎄
-<br><br>We're bursting with gratitude for our sponsors, whose generosity helps us spread bigger smiles, one kid at a time this Christmas. Your kindness magnifies the joy we share with these youngsters, making this season even more merry and bright. We’re grateful for your lives!🙏🏼
-<br><br>‘Til next season, friends!💚
-<br><br>#PasKids2023
-<br>#KidsOfBataan
-<br><br>See full documentation <a href="https://web.facebook.com/kidsofbataan/posts/pfbid037GFoeCVrN8PYKPJrcbDfdiERB9PMdsoGm5iYUF3HH5uY9LVQ2y5K9nLwRdmNX9aGl">HERE</a>.
-
-Article 5
-    Title: YOUNG AMORSOLO
-    Image: art5.png
-    Date: 02/05/24
-    Content:
-    Join us this February as Kids of Bataan celebrates National Arts Month by paying tribute to the legendary Fernando Amorsolo, the Filipino artist extraordinaire! Through YOUNF AMORSOLO, we're diving deep into his world of breathtaking landscape and rural paintings, themes close to the heart of Bataeños.
-<br><br> YOUNG AMORSOLO isn't just about honoring the past—it's about nurturing new generation of artists! We're unleashing creativity by encouraging kids to dive into drawing, painting, and more. With industry experts as mentors, we're creating an animated community of young artists in Bataan. We're mixing old-school charm with digital flair to keep our Filipino art legacy alive and kicking. 
-<br><br>Together, let’s craft a vibrant future for Bataeños!🎨
-<br><br>#YoungAmorsolo
-<br>#KidsOfBataan
-
-Article 6
-    Title: YOUNG AMORSOLO: For National Arts Month! 🎨
+    Title: YOUNG AMORSOLO: It's Arts Month! 🎨
     Image: art6.png
     Date: 02/25/24
     Content:

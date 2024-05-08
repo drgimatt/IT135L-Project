@@ -44,7 +44,7 @@
 <br>
 
 <div class="container mt-5"  style="max-width: 1300px;">
-    <h2 class="mb-1 green">Status Tracker</h2>
+    <h2 class="mb-1 green" style="font-weight:bold">Status Tracker</h2>
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
@@ -82,7 +82,7 @@
     <br><br>
 
     <div class="d-flex justify-content-between align-items-center mb-2">
-        <h2 class="mb-1 pink">Article Categories</h2>
+        <h2 class="mb-1 pink" style="font-weight:bold">Article Categories</h2>
         <a id="add-category-btn" class="btn btn-pink" href="#">Add Category</a>
     </div>
         <table id="category-table" class="table table-bordered mt-1">
@@ -111,7 +111,7 @@
     <br><br>
 
     <div class="d-flex justify-content-between align-items-center mb-2">
-        <h2 class="mb-1 teal">All Articles</h2>
+        <h2 class="mb-1 teal" style="font-weight:bold">All Articles</h2>
         <a id="add-category-btn" class="btn btn-teal" href="addArticle.php">Create New Article</a>
     </div>
     <table id="articles-table" class="table table-bordered mt-1">
@@ -138,7 +138,7 @@
                         echo "<td>{$row['CategoryID']}</td>";
                         echo "<td>{$row['Title']}</td>";
                         echo "<td>{$row['AStatus']}</td>";
-                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Modify</button></a><a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Modify</button></a> <a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
                         echo "</tr>";
                     }
                     ?>

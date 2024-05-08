@@ -180,14 +180,15 @@
                         <div class="form-group">
                             <label for="picture">Cover Image</label>
                             <input type="file" id="picture" name="picture" class="form-control" onchange="onFileSelected(event)" accept="image/*">
-                            <!-- Display existing image if it exists -->
+                            <br>
+                            <!-- display existing image if it exists -->
                             <?php if (!empty($picture)): ?>
-                                <img id = "existingImage" src="<?php echo 'data:image/' . pathinfo($article['Picture'], PATHINFO_EXTENSION) . ';base64,' . $article['Picture']; ?>" class="form-control image-container" style="display:block; margin-left:auto; margin-right:auto; height: 200px; width: 300px">
+                                <img id = "existingImage" src="<?php echo 'data:image/' . pathinfo($article['Picture'], PATHINFO_EXTENSION) . ';base64,' . $article['Picture']; ?>" class="form-control image-container" style="display:block; margin-left:auto; margin-right:auto; height: 200px; width: 500px">
                             <?php endif; ?>
-                            <!-- Placeholder -->
+                            <!-- placeholder -->
                             <br>
                             <div class="center">
-                                <img id="myimage" class="form-control image-container" style="display:none; margin-left:auto; margin-right:auto; height: 200px; width: 300px">
+                                <img id="myimage" class="form-control image-container" style="display:none; margin-left:auto; margin-right:auto; height: 200px; width: 500px">
                             </div>
                         </div>
 
