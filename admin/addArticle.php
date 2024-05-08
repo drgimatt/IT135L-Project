@@ -1,11 +1,13 @@
 <?php
+
+    session_start();
     $statusMessage = "";
 
     // include database files
     include '../database/connectDB.php';
 
     // initialize variables
-    $employeeID = "";
+    $employeeID = $_SESSION["EmployeeID"];
     $title = "";
     $categoryID = "";
     $content = "";
@@ -14,7 +16,6 @@
     $status = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $employeeID = $_POST["employeeID"];
         $title = $_POST["title"];
         $categoryID = $_POST["categoryID"];
         $content = $_POST["content"];
@@ -44,7 +45,7 @@
                 document.location.href = 'addArticle.php';
                 </script>
             ";
-        }
+        }        
     }
 ?>
 
@@ -80,11 +81,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="./allDonations.php">Donations</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./allDonors.php">Donors</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./articleDashboard.php">Articles</a>
                 </li>
             </ul>
         </div>
@@ -108,20 +112,8 @@
                     <form action="#" method="POST" enctype="multipart/form-data">
                         
                         <div class="form-group">
-                        <label for="employeeID">Your Employee ID</label>
-                            <select class="form-control" id="employeeID" name="employeeID">
-                                <?php
-                                include '../database/connectDB.php';
-
-                                $sql = "SELECT ID FROM Employees";
-                                $stmt = $pdo_obj->query($sql);
-
-                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                    $EID = $row['ID'];
-                                    echo "<option value='$EID'>$EID</option>";
-                                }
-                                ?>
-                            </select>
+                            <label for="employeeID">Your Employee ID</label>
+                            <input type="number" class="form-control" id="employeeID" name="employeeID" disabled placeholder="<?php echo $_SESSION["EmployeeID"]; ?>">
                         </div>
 
                         <div class="form-group">
@@ -135,12 +127,13 @@
                                 <?php
                                 include '../database/connectDB.php';
 
-                                $sql = "SELECT ID FROM Article_Category";
+                                $sql = "SELECT * FROM Article_Category";
                                 $stmt = $pdo_obj->query($sql);
 
                                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                     $CID = $row['ID'];
-                                    echo "<option value='$CID'>$CID</option>";
+                                    $CNAME = $row['Category'];
+                                    echo "<option value='$CID'>$CNAME</option>";
                                 }
                                 ?>
                             </select>
@@ -157,12 +150,12 @@
                             <!--placeholder-->
                             <br>
                             <div class="center">
-                                <img id="myimage"  class="form-control image-container" style="align:center; height: 200px; width: 300px">
+                                <img id="myimage"  class="form-control image-container" style="display:block; margin-left:auto; margin-right:auto; height: 200px; width: 300px">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="date">Date Written</label>
-                            <input type="date" class="form-control" id="date" name="date">
+                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
 
                         <div class="form-group">

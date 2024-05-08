@@ -86,6 +86,7 @@
 
     include '../database/connectDB.php';
 
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try{
 
@@ -99,16 +100,27 @@
             $stmtCredentials->execute();
     
             $result = $stmtCredentials->fetch(PDO::FETCH_ASSOC);
-            if ($result) {
-                // Credentials match, do something
+
+            if($result){
+                $_SESSION["ID"] = $result['ID'];
+                $_SESSION["EmployeeID"] = $result['EmployeeID'];
                 header("Location: ./allDonations.php");
                 exit;
             } else {
-                // Credentials not found, do something else
                 $message = "Invalid username or password. Please try again.";
                 echo "<script>alert('$message');</script>";
-                exit;
             }
+
+            // if ($result) {
+            //     // Credentials match, do something
+            //     header("Location: ./allDonations.php");
+            //     exit;
+            // } else {
+            //     // Credentials not found, do something else
+            //     $message = "Invalid username or password. Please try again.";
+            //     echo "<script>alert('$message');</script>";
+            //     exit;
+            // }
     
         } catch (PDOException $e){
             echo "Failed to query database: " . $e->getMessage();

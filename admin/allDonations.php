@@ -33,7 +33,7 @@
             </ul>
         </div>
        
-        <a class="btn btn-teal ml-2" href="./adminLogin.php">Logout</a>
+        <a class="btn btn-teal ml-2" href="./adminLogoff.php">Logout</a>
     </nav>
 
     <br>

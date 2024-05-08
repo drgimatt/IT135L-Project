@@ -21,7 +21,7 @@
         $pdo_obj->exec($create_donors_table);
         echo "Donors table created successfully.";
     } catch(PDOException $e) {
-        echo "\nError Donors creating table: " . $e->getMessage();
+        echo "\nError creating Donors table: " . $e->getMessage();
     }
 
     // create DONATIONS table
@@ -40,7 +40,7 @@
         $pdo_obj->exec($create_donations_table);
         echo "Donations table created successfully.";
     } catch(PDOException $e) {
-        echo "\nError Donations creating table: " . $e->getMessage();
+        echo "\nError creating Donations table: " . $e->getMessage();
     }
 
     $articlecategoryTableQuery = "CREATE TABLE IF NOT EXISTS Article_Category (

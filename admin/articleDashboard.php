@@ -35,7 +35,7 @@
             </ul>
         </div>
        
-        <a class="btn btn-green ml-2" href="./adminLogin.php">Logout</a>
+        <a class="btn btn-green ml-2" href="./adminLogoff.php">Logout</a>
     </nav>
 
 <br>
@@ -138,7 +138,7 @@
                         echo "<td>{$row['CategoryID']}</td>";
                         echo "<td>{$row['Title']}</td>";
                         echo "<td>{$row['AStatus']}</td>";
-                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Open</button></a><a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Modify</button></a><a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
                         echo "</tr>";
                     }
                     ?>
