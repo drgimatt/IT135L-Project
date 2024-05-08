@@ -6,8 +6,8 @@
 
     include 'connectDB.php';
 
-    // increase max_allowed_packet size dynamically ( we can use this if maglalagay tayo images )
-        // $increase_packet_size_query = "SET GLOBAL max_allowed_packet = 67108864"; // 64 MB
+    //increase max_allowed_packet size dynamically ( we can use this if maglalagay tayo images )
+        $increase_packet_size_query = "SET GLOBAL max_allowed_packet = 67108864"; // 64 MB
 
     // create DONORS table
     

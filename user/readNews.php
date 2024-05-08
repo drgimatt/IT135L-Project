@@ -88,30 +88,40 @@
     </nav>
         <br><br>
 
-<!--article start-->
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <!-- Banner Image -->
-                    <img src="<?php echo $picture; ?>" class="img-fluid" alt="Article Image">
-                    <!-- Title -->
-                    <h1 class="display-4 mt-3"><?php echo $title; ?></h1>
-                    <!-- Date, Author, and Category -->
-                    <p class="lead">Published on <?php echo $date; ?> by <span><?php echo $authorName; ?></span>, Category: <span><?php echo $categoryName; ?></span></p>
+    <!--article start-->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron-fluid">
+                    <div class="container">
+                        <?php
+                            echo '<img class="img-fluid rounded-start" src="data:image/' . pathinfo($article['Picture'], PATHINFO_EXTENSION) . ';base64,' . $article['Picture'] . '" id="art_image">';
+                        ?>
+                        <h1 class="display-4 mt-3" style="font-weight:bold"><?php echo $title; ?></h1>
+                        <p class="lead">Published on <?php echo $date; ?> by <span><?php echo $authorName; ?></span>, Category: <span><?php echo $categoryName; ?></span></p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Content -->
-            <p><?php echo $content; ?></p>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Content -->
+                <p><?php echo $content; ?></p>
+            </div>
         </div>
     </div>
-</div>
-<!--article end-->
+    <!--article end-->
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="newsPage.php" class="btn btn-pink">Back to All News</a>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
 
     <!-- Footer -->
     <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #7FCE46 !important; color: white;">

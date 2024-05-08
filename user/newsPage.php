@@ -1,7 +1,7 @@
 <?php
     include '../database/connectDB.php';
 
-    $getArticles = "SELECT * FROM Articles WHERE AStatus = 'Published'";
+    $getArticles = "SELECT * FROM Articles WHERE AStatus = 'Published' ORDER BY DateCreated DESC"; // most recent - oldest
     $articles = $pdo_obj->query($getArticles);
 ?>
 
@@ -69,13 +69,13 @@
                 while($row = $articles->fetch(PDO::FETCH_ASSOC))
                 {
                     echo '<div class="item-card" style="padding:0">';
-                    echo '<img class="item-card-pic" style="height:300px;min-width:300;" src="data:image/*;base64,' . $row['Picture'] . '">';
+                    echo '<img class="item-card-pic" style="height:200px;min-width:300;" src="data:image/*;base64,' . $row['Picture'] . '">';
                     echo '<div class="item-card-body">';
                     echo '<h4 class="item-card-title">' .$row['Title'] . '</h4>';
-                    echo '<img style="width:20px;margin:0;margin-right:5px" src="../assets/calendar-icon.png"';
+                    echo '<img style="width:20px;margin:0;margin-right:5px" src="../assets/dateicon.png"';
                     echo '<p class="item-card-text">' .$row['DateCreated'] . '</p>';
                     echo '<div style="text-align: right;">'; // Aligning the button container to the right
-                    echo '<a href="readNews.php?id='.$row['ID'].'" class="item-btn btn-teal">Read More</a>';
+                    echo '<a href="readNews.php?id='.$row['ID'].'" class="btn btn-teal">Read More</a>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';

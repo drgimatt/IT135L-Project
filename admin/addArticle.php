@@ -29,26 +29,24 @@
         
         try {
             $pdo_obj->exec($insertArticle);
-            echo 
-            "
-            <script>
-            alert('Article Created');
-            document.location.href = 'articleDashboard.php';
-            </script>
+            
+            echo "
+                <script>
+                alert('Article Created');
+                document.location.href = 'articleDashboard.php';
+                </script>
             ";
-        }
-    
+        } 
         catch (PDOException $e) {
-            echo 
-            "
-            <script>
-            alert('Failed to create article.');
-            document.location.href = 'addArticle.php';
-            </script>
+            echo "
+                <script>
+                alert('Failed to create article. Error: ".$e->getMessage()."');
+                document.location.href = 'addArticle.php';
+                </script>
             ";
         }
     }
-    ?>
+?>
 
 
 
