@@ -11,7 +11,7 @@ if (!empty($_POST["email"]) && !empty($_POST["inquiry"]))  {
     From: " . $_POST["email"]."\n\n
     Message: ".$_POST["inquiry"]
     );
-    $sendgrid = new \SendGrid('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');
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
 
     try {
         $response = $sendgrid->send($email);
