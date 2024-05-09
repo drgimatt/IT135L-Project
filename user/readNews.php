@@ -13,21 +13,19 @@
     $authorLName = "";
     $categoryName = "";
 
-    // Define the category colors array
+    // color codes/legend array
     $categoryColors = array(
         "Announcement" => "#FCB020",
         "Advisory/Updates" => "#24B4C7",
         "Holiday" => "#7FCE46",
         "Events" => "#FF1F99",
         "Appreciation Post" => "#DC35A1",
-        // Add more categories and their respective colors as needed
     );
 
-    // Fetch article details if article ID is provided in URL
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        // Fetch article details from the database
+        // fetch article details from the database
         $getArticle = "SELECT * FROM Articles WHERE ID = :art_id";
         $stmt = $pdo_obj->prepare($getArticle);
         $stmt->bindParam(':art_id', $id);
@@ -35,7 +33,6 @@
         $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if($article) {
-            // Assign fetched values to variables
             $employeeID = $article['EmployeeID'];
             $title = $article['Title'];
             $categoryID = $article['CategoryID'];
@@ -43,7 +40,7 @@
             $date = $article['DateCreated'];
             $status = $article['AStatus'];
 
-            // Get author's (employee) first and last name
+            // get author's (employee) first and last name
             $getAuthorName = "SELECT FirstName, LastName FROM Employees WHERE ID = :author_id";
             $stmt = $pdo_obj->prepare($getAuthorName);
             $stmt->bindParam(':author_id', $employeeID);
@@ -54,7 +51,7 @@
                 $authorLName = $author['LastName'];
             }
 
-            // Get category name
+            // get category name
             $getCategoryName = "SELECT Category FROM Article_Category WHERE ID = :category_id";
             $stmt = $pdo_obj->prepare($getCategoryName);
             $stmt->bindParam(':category_id', $categoryID);
