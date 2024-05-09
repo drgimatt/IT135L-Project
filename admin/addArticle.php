@@ -130,12 +130,12 @@
 
                         <div class="form-group">
                             <label for="title">Article Title</label>
-                            <input type="text" class="form-control" id="title" name="title">
+                            <input type="text" class="form-control" id="title" name="title" required>
                         </div>
 
                         <div class="form-group">
                         <label for="categoryID">Category</label>
-                            <select class="form-control" id="categoryID" name="categoryID">
+                            <select class="form-control" id="categoryID" name="categoryID" required>
                                 <?php
                                 include '../database/connectDB.php';
 
@@ -153,7 +153,7 @@
 
                         <div class="form-group">
                             <label for="content">Content/Body</label>
-                            <textarea type="text" class="form-control" id="content" name="content" style="height:500px"></textarea>
+                            <textarea type="text" class="form-control" id="content" name="content" style="height:500px" required></textarea>
                         </div>
 
                         <div class="form-group">
@@ -167,7 +167,7 @@
                         </div>
                         <div class="form-group">
                             <label for="date">Date Written</label>
-                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date('Y-m-d'); ?>">
+                            <input type="date" class="form-control" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required>
                         </div>
 
                         <div class="form-group">

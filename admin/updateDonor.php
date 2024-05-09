@@ -112,15 +112,15 @@
                     <form id="updateForm" action="#" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="donorName">Donor Name</label>
-                            <input type="text" class="form-control" id="donorName" name="donorName" value="<?php echo $donorName; ?>">
+                            <input type="text" class="form-control" id="donorName" name="donorName" value="<?php echo $donorName; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="donorNum">Donor's Contact Number</label>
-                            <input type="text" class="form-control" id="donorNum" name="donorNum" value="<?php echo $donorNum; ?>">
+                            <input type="text" class="form-control" id="donorNum" name="donorNum" value="<?php echo $donorNum; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="donorEmail">Donor Email</label>
-                            <input type="email" class="form-control" id="donorEmail" name="donorEmail" value="<?php echo $donorEmail; ?>">
+                            <input type="email" class="form-control" id="donorEmail" name="donorEmail" value="<?php echo $donorEmail; ?>" required>
                         </div>
                         <!-- submit the form -->
                         <div class="submitbutton text-center">

@@ -152,7 +152,7 @@
 
                         <div class="form-group">
                             <label for="title">Article Title</label>
-                            <input type="text" class="form-control" id="title" name="title" value ="<?php echo $title; ?>">
+                            <input type="text" class="form-control" id="title" name="title" value ="<?php echo $title; ?>" required>
                         </div>
 
                         <div class="form-group">
@@ -175,7 +175,7 @@
 
                         <div class="form-group">
                             <label for="content">Content/Body</label>
-                            <textarea type="text" class="form-control" id="content" name="content" style="height:500px"><?php echo $content; ?></textarea>
+                            <textarea type="text" class="form-control" id="content" name="content" required style="height:500px"><?php echo $content; ?></textarea>
                         </div>
 
                         <div class="form-group">
@@ -196,7 +196,7 @@
 
                         <div class="form-group">
                             <label for="date">Date Written</label>
-                            <input type="date" class="form-control" id="date" name="date" value ="<?php echo $date; ?>">
+                            <input type="date" class="form-control" id="date" name="date" required value ="<?php echo $date; ?>">
                         </div>
 
                         <div class="form-group">

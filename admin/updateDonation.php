@@ -58,7 +58,6 @@
         $itemQty = $_POST["itemQty"];
         $itemCat = $_POST["itemCat"];
         $itemDate = $_POST["itemDate"];
-        $itemDonor = $_POST["itemDonor"];
         $itemRem = $_POST["itemRem"];
 
         // update query
@@ -143,23 +142,23 @@
                     <form id="updateForm" action="#" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="itemName">Item Name</label>
-                            <input type="text" class="form-control" id="itemName" name="itemName" value="<?php echo $itemName; ?>">
+                            <input type="text" class="form-control" id="itemName" name="itemName" value="<?php echo $itemName; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="itemDesc">Item Description</label>
-                            <input type="text" class="form-control" id="itemDesc" name="itemDesc" value="<?php echo $itemDesc; ?>">
+                            <input type="text" class="form-control" id="itemDesc" name="itemDesc" value="<?php echo $itemDesc; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="itemQty">Item Quantity</label>
-                            <input type="text" class="form-control" id="itemQty" name="itemQty" value="<?php echo $itemQty; ?>">
+                            <input type="text" class="form-control" id="itemQty" name="itemQty" value="<?php echo $itemQty; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="itemCat">Item Category</label>
-                            <input type="text" class="form-control" id="itemCat" name="itemCat" value="<?php echo $itemCat; ?>">
+                            <input type="text" class="form-control" id="itemCat" name="itemCat" value="<?php echo $itemCat; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="itemDate">Item Date Received</label>
-                            <input type="date" class="form-control" id="itemDate" name="itemDate" value="<?php echo $itemDate; ?>">
+                            <input type="date" class="form-control" id="itemDate" name="itemDate" value="<?php echo $itemDate; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="itemDonor">Donor</label>
@@ -167,7 +166,7 @@
                         </div>
                         <div class="form-group">
                             <label for="itemRem">Item Remarks</label>
-                            <input type="text" class="form-control" id="itemRem" name="itemRem" value="<?php echo $itemRem; ?>">
+                            <input type="text" class="form-control" id="itemRem" name="itemRem" value="<?php echo $itemRem; ?>" required>
                         </div>
                         <!-- submit the form -->
                         <div class="submitbutton text-center">
