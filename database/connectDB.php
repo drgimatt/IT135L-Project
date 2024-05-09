@@ -9,7 +9,7 @@
     6. go to localhost/IT135L-Project/database/createEntries.php (preloaded entries lang ito)
 */
 
-    $db = "mysql:host=localhost;dbname=KOBInventory";
+    $db = "mysql:host=112.205.159.209:3310;dbname=KOBInventory";
 
     $user = "admin";
     $password = "titingkayad";

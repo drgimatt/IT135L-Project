@@ -69,9 +69,9 @@
 
                 // Display the counts in the table body
                 echo "<tr>";
-                echo "<td>{$counts['published_count']}</td>";
-                echo "<td>{$counts['completed_count']}</td>";
-                echo "<td>{$counts['in_progress_count']}</td>";
+                echo "<td>" . ($counts['published_count'] ?? '0') . "</td>";
+                echo "<td>" . ($counts['completed_count'] ?? '0') . "</td>";
+                echo "<td>" . ($counts['in_progress_count'] ?? '0') . "</td>";
                 echo "</tr>";
                 ?>
             </tbody>
