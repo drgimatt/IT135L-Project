@@ -2,3 +2,4 @@ sendgrid.env
 vendor
 Dockerfiles
 .DS_Store
+database/connectDB.php
