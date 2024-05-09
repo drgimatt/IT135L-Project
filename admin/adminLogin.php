@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="icon" href="../assets/favicon.ico">
-    <!-- Add Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./admin.css">
+      <!-- Add Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="./admin.css">
+       <!-- jQuery -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+       <!-- Popper.js -->
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+       <!-- Bootstrap JS -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -29,15 +35,16 @@
         </div>
     </nav>
 
-    <div class="container" style="margin-top: 70px;">
+    <div class="col-xl-10 col-lg-12 col-md-9 mt-3">
+    <div class="card-body p-0">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-lg-4">
                 <div class="card">
                     <div class="row no-gutters">
-                        <div class="col-md-6 logo-container">
+                        <div class="col-lg-6 d-none d-lg-block">
                             <img src="../assets/logo.jpeg" alt="Logo" class="logo">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="card-body">
                                 <h3 class="mb-4">Login</h3>
                                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="loginForm">
@@ -57,13 +64,9 @@
                 </div>
             </div>
         </div>
+</div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
     <!-- Footer -->
     <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #FF1F99 !important; color: white;">
         <!-- Copyright -->
