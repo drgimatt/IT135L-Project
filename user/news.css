@@ -173,3 +173,14 @@ body {
     border-radius: 20px !important; 
     padding: 5px 10px !important;
 }
+
+.content-with-image {
+    position: relative;
+}
+
+.content-with-image img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 50%;
+}

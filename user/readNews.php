@@ -136,7 +136,7 @@
                             
                             <hr>
                             <br>
-                            <p><?php echo $content; ?></p>
+                            <p class="content-with-image justify-text"><?php echo $content; ?></p>
                         </div>
         <!--article end-->
                     <div class="container mt-3">

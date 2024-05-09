@@ -127,7 +127,7 @@
             </ul>
         </div>
        
-        <a class="btn btn-teal ml-2" href="./adminLogin.php">Logout</a>
+        <a class="btn btn-teal ml-2" href="./adminLogoff.php">Logout</a>
     </nav>
 
     <br>
@@ -216,7 +216,7 @@
 
                         <!-- submit the form -->
                         <div class="submitbutton text-center">
-                            <button type="submit" class="btn btn-pink" style="width: 200px; margin-bottom: 20px;">Modify Article</button>
+                            <button type="submit" class="btn btn-pink" style="width: 200px; margin-bottom: 20px;">Save Changes</button>
                         </div>
                     </form>
                 </div>

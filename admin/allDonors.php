@@ -77,7 +77,7 @@
                     echo "<td>{$row['DonorName']}</td>";
                     echo "<td>{$row['DonorNum']}</td>";
                     echo "<td>{$row['DonorEmail']}</td>";
-                    echo "<td> <a href='updateDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a> <a href='deleteDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                    echo "<td> <a href='updateDonor.php?id={$row['DonorID']}'><button class='btn btn-ol-teal btn-sm'>Update</button></a></td>";
                     echo "</tr>";
                 }
                 ?>

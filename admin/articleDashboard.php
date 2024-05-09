@@ -138,7 +138,7 @@
                         echo "<td>{$row['CategoryID']}</td>";
                         echo "<td>{$row['Title']}</td>";
                         echo "<td>{$row['AStatus']}</td>";
-                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Modify</button></a> <a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
+                        echo "<td><a href='updateArticle.php?id={$row['ID']}'><button class='btn btn-ol-teal btn-sm'>Edit</button></a> <a href='deleteArticle.php?id={$row['ID']}'><button class='btn btn-ol-pink btn-sm'>Delete</button></a></td>";
                         echo "</tr>";
                     }
                     ?>
