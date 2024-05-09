@@ -5,15 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="icon" href="../assets/favicon.ico">
-      <!-- Add Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-       <link rel="stylesheet" href="./admin.css">
-       <!-- jQuery -->
-       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-       <!-- Popper.js -->
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-       <!-- Bootstrap JS -->
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./admin.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -35,16 +29,15 @@
         </div>
     </nav>
 
-    <div class="col-xl-10 col-lg-12 col-md-9 mt-3">
-    <div class="card-body p-0">
+    <div class="container" style="margin-top: 70px;">
         <div class="row justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="row no-gutters">
-                        <div class="col-lg-6 d-none d-lg-block">
+                        <div class="col-md-6 logo-container">
                             <img src="../assets/logo.jpeg" alt="Logo" class="logo">
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <div class="card-body">
                                 <h3 class="mb-4">Login</h3>
                                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="loginForm">
@@ -64,9 +57,13 @@
                 </div>
             </div>
         </div>
-</div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
     <!-- Footer -->
     <footer class="bg-info text-center text-lg-start fixed-bottom" style="background-color: #FF1F99 !important; color: white;">
         <!-- Copyright -->
@@ -81,3 +78,53 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<?php 
+
+    include '../database/connectDB.php';
+    
+    session_start();
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        try{
+
+            $enteredUsername = $_POST['username'];
+            $enteredPassword = $_POST['password'];
+            $credentialsQuery = "SELECT * FROM credentials WHERE username = :username AND password = :password";
+    
+            $stmtCredentials = $pdo_obj->prepare($credentialsQuery);
+            $stmtCredentials->bindParam(':username', $enteredUsername);
+            $stmtCredentials->bindParam(':password', $enteredPassword);
+            $stmtCredentials->execute();
+    
+            $result = $stmtCredentials->fetch(PDO::FETCH_ASSOC);
+
+            if($result){
+                $_SESSION["ID"] = $result['ID'];
+                $_SESSION["EmployeeID"] = $result['EmployeeID'];
+                header("Location: ./allDonations.php");
+                exit;
+            } else {
+                $message = "Invalid username or password. Please try again.";
+                echo "<script>alert('$message');</script>";
+            }
+
+            // if ($result) {
+            //     // Credentials match, do something
+            //     header("Location: ./allDonations.php");
+            //     exit;
+            // } else {
+            //     // Credentials not found, do something else
+            //     $message = "Invalid username or password. Please try again.";
+            //     echo "<script>alert('$message');</script>";
+            //     exit;
+            // }
+    
+        } catch (PDOException $e){
+            echo "Failed to query database: " . $e->getMessage();
+        }
+
+
+    }
+
+?>
