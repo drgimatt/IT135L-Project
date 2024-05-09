@@ -8,17 +8,11 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="signin.css">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <!-- Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">
             <img src="../assets/logomain.png" height="40px" alt="Your Logo">
         </a>
@@ -58,11 +52,11 @@
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="loginForm">
                     
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg bg-light fs-6" formControlName="username" id="username" name="username" placeholder="Enter username" required>
+                        <input type="text" class="form-control form-control-lg bg-light fs-6" id="username" name="username" placeholder="Enter username" required>
                         <small class="text-muted">e.g juandelacruz</small>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" formControlName="password" id="password" name="password" placeholder="Enter password" required>
+                        <input type="password" class="form-control form-control-lg bg-light fs-6" id="password" name="password" placeholder="Enter password" required>
                     </div>
                     <div class="input-group mb-3">
                         <button type="submit" class="btn btn-lg btn-teal w-100 fs-6">LOGIN</button>
@@ -87,8 +81,12 @@
         <!-- Copyright -->
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
     
 </html>
 

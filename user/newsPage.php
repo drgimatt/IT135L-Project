@@ -67,7 +67,7 @@
             </ul>
         </div>
        
-        <a class="btn btn-green ml-2"  href="../admin/adminLogin.php">Login</a>
+        <a class="btn btn-green ml-2"  href="../admin/signin.php">Login</a>
     </nav>
         <br><br>
     <!--articles card start-->

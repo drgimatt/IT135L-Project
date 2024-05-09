@@ -11,7 +11,7 @@
 
     $db = "mysql:host=localhost:3310;dbname=KOBInventory";
 
-    $user = "root";
+    $user = "admin";
     $password = "titingkayad";
 
     try {
